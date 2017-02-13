@@ -14,15 +14,27 @@
 #include <sstream>
 #include <unordered_map>
 
+/*
+ Fib(n) = Fib(n-1) + Fib(n-2)
+ Fib(0) = 0;
+ Fib(1) = 1;
+ 
+ This class calculates Fibonaci numbers using Dynamic programing.
+ As reculsive function go through each fiboncci numbers, if the function calculates a new fibonacci number it saves the number to avoid redundant calculations.
+ 
+ O(n)
+*/
 class Fibonacci{
 public:
     Fibonacci(){
     }
     
+    // Execute reculsive function
     unsigned int run(unsigned int n){
         return calcFibonacci(n);
     }
     
+    // return a string of all saved Fib numbers
     std::string toString(){
         std::stringstream ss;
         ss << "savedFib [";
@@ -40,6 +52,7 @@ public:
     }
 
 private:
+    //main reculsive function
     unsigned int calcFibonacci(unsigned int n){
         unsigned int fib = 0;
         if (n == 0) {
@@ -55,6 +68,8 @@ private:
         return fib;
     }
     
+    // Hashmap for saved Fibs
+    // Big O of searching on Hash map is O(n) 
     std::unordered_map<unsigned int, unsigned int> savedFib;
 };
 
