@@ -1,8 +1,8 @@
 //
 //  Fibonacci.h
-//  interviewPrep
+//  DynamicProgramming
 //
-//  Created by Allen Kim on 2/12/17.
+//  Created by Allen Kim on 2/13/17.
 //  Copyright (c) 2017 Allen. All rights reserved.
 //
 
@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <unordered_map>
 
 class Fibonacci{
@@ -19,19 +20,27 @@ public:
     }
     
     unsigned int run(unsigned int n){
-        return calcFibonacci(n, 0);
+        return calcFibonacci(n);
     }
     
     std::string toString(){
-        return "";
+        std::stringstream ss;
+        ss << "savedFib [";
+        bool first = true;
+        for(auto map: savedFib){
+            if(first){
+                first = false;
+            }else{
+                ss << ", ";
+            }
+            ss << "fib(" << map.first << ")";
+        }
+        ss << "]\n";
+        return ss.str();
     }
 
 private:
-    unsigned int calcFibonacci(unsigned int n, unsigned int indent){
-        for(unsigned int i = 0; i < indent; i++){
-            std::cout << "  ";
-        }
-        std::cout << "n: " << n << std::endl;
+    unsigned int calcFibonacci(unsigned int n){
         unsigned int fib = 0;
         if (n == 0) {
             fib = 0;
@@ -40,10 +49,9 @@ private:
         }else if(savedFib.find(n) != savedFib.end()){
             fib = savedFib[n];
         }else{
-            fib = calcFibonacci(n-1, indent + 1) + calcFibonacci(n-2, indent + 1);
+            fib = calcFibonacci(n-1) + calcFibonacci(n-2);
             savedFib[n] = fib;
         }
-//        std::cout << "fib: " << fib << std::endl;
         return fib;
     }
     

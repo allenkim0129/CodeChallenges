@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		9FE490D21E517D2A000FAE8D /* DynamicProgramming */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DynamicProgramming; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE490D51E517D2A000FAE8D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9FE490DC1E517D4D000FAE8D /* Fibonacci.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fibonacci.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 		9FE490D41E517D2A000FAE8D /* DynamicProgramming */ = {
 			isa = PBXGroup;
 			children = (
+				9FE490DC1E517D4D000FAE8D /* Fibonacci.h */,
 				9FE490D51E517D2A000FAE8D /* main.cpp */,
 			);
 			path = DynamicProgramming;
