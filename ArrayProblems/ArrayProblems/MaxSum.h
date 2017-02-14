@@ -25,9 +25,11 @@ public:
     }
     
     int calcMaxSum(){
-        int localMaxSum = maxSum = vec[0];
         int localStart = start = 0;
         end = 0;
+        if(vec.size() == 0)
+            return 0;
+        int localMaxSum = maxSum = vec[0];
         for(int i = 1; i < vec.size(); i++){
             int curElement = vec[i];
             if(localMaxSum + curElement > curElement){
