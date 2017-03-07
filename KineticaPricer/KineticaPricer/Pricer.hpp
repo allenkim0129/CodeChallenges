@@ -14,10 +14,10 @@
 #include <unordered_map>
 #include <iostream>
 #include <sstream>
+#include <stdexcept>
 
 //custom libraries
-#include "BidAnalyzer.hpp"
-#include "AskAnalyzer.hpp"
+#include "Analyzer.hpp"
 
 class Pricer{
 public:
@@ -36,8 +36,8 @@ private:
     //private variables
     double targetSize;
     std::unordered_map<std::string, std::string> sideMap;       //contain id and its side information
-    BidAnalyzer* bidAnalyzer;                                   //analyzer for bid orders
-    AskAnalyzer* askAnalyzer;                                   //analyzer for ask order
+    Analyzer* bidAnalyzer;                                   //analyzer for bid orders
+    Analyzer* askAnalyzer;                                   //analyzer for ask order
     
 };
 #endif /* Pricer_hpp */

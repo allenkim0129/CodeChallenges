@@ -12,8 +12,8 @@
 
 Pricer::Pricer(double targetSize_){
     targetSize = targetSize_;
-    bidAnalyzer = new BidAnalyzer(targetSize);
-    askAnalyzer = new AskAnalyzer(targetSize);
+    bidAnalyzer = new Analyzer(targetSize, "B");
+    askAnalyzer = new Analyzer(targetSize, "S");
 }
 
 Pricer::~Pricer(){
